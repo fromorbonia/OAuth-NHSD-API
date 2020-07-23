@@ -1,0 +1,18 @@
+﻿@page
+@model oauth_nhsd_api.Pages.ProtectedPageModel
+@{
+    ViewData["Title"] = "ProtectedPage";
+}
+
+<h1>ProtectedPage</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">Response Content:</div>
+        <div class="col-9">@Model.ResContent</div>
+    </div>
+    <div class="row">
+        <div class="col-3">Response Information:</div>
+        <div class="col-9">@Model.ResResponse</div>
+    </div>
+</div>
