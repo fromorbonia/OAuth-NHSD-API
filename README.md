@@ -20,13 +20,6 @@ This sample can be run locally, as long as it can reach the NHS Digital API Plat
 
 * Visual Studio 2019 - ASP.NET Core 3 and Razor pages
 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
