@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -39,14 +34,17 @@ namespace oauth_nhsd_api
                     options.Cookie.HttpOnly = true;
                     options.Cookie.SameSite = SameSiteMode.Lax;
                     options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+                    options.ExpireTimeSpan = new System.TimeSpan(0, 10, 0) ;
+                    options.SlidingExpiration = true;
                 })
                 .AddOAuth("NHSD", options =>
                 {
                     options.AuthorizationEndpoint = Configuration["NHSD:OAuthEndpoint"] + "/authorize";
-                    options.CallbackPath = new PathString("/NHSDBrokerModelModelCallBack2");
+                    options.CallbackPath = new PathString("/MyWebServerCallBack");
 
                     options.ClientId = Configuration["NHSD:ClientId"];
                     options.ClientSecret = Configuration["NHSD:ClientSecret"];
+
                     options.TokenEndpoint = Configuration["NHSD:OAuthEndpoint"] + "/token";
                     options.SaveTokens = true;
                 });

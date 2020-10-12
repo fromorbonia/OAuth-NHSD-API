@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Threading.Tasks;
+using System;
 
 namespace oauth_nhsd_api.Pages
 {
@@ -19,6 +16,8 @@ namespace oauth_nhsd_api.Pages
 
         public string ResContent { get; set; }
 
+        public DateTime SessionExpires { get; set; }
+
         private readonly IConfiguration _configuration;
 
         public ProtectedPageModel(IConfiguration configuration)
@@ -27,21 +26,22 @@ namespace oauth_nhsd_api.Pages
         }
         public async Task OnGet()
         {
-            var user = HttpContext.User;
-            var accessToken = await HttpContext.GetTokenAsync("access_token");
-            var refreshToken = await HttpContext.GetTokenAsync("refresh_token");
 
-            var authenticationInfo = await HttpContext.AuthenticateAsync();
+            var tokenAccess = await HttpContext.GetTokenAsync("access_token");
+            var tokenRefresh = await HttpContext.GetTokenAsync("refresh_token");
+            var tokenExpiresAt = await HttpContext.GetTokenAsync("expires_at");
 
             HttpRequestMessage req = new HttpRequestMessage(System.Net.Http.HttpMethod.Get,
                 _configuration["NHSD:APIEndpoint"] + "/Patient/9000000009");
 
-            req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", tokenAccess);
+            req.Headers.Add("NHSD-Session-URID", "TestURID");
 
             HttpResponseMessage response = await new HttpClient().SendAsync(req);
 
-            ResResponse = response.StatusCode.ToString();
-            ResContent = response.ToString();
+            ResResponse = string.Format("{0} - {1}", (int)response.StatusCode, response.StatusCode);
+            ResContent = await response.Content.ReadAsStringAsync();
+            SessionExpires = Convert.ToDateTime(tokenExpiresAt);
         }
     }
 }

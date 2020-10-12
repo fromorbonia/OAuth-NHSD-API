@@ -1,74 +1,25 @@
-# Project Title
+# Example: Web Client & Server App Authenticating with NHS Digital OAuth
 
-One Paragraph of project description goes here
+Some OAuth providers enable you to reuse the authentication of an OIDC provider. If you trust that OIDC provider, have only simply requirements, then it can save your application from managing it's own user database. The NHS Digital API Platform has a similar option, and this example walks through how to integrate with it using the standard Microsoft ASP.NET Core libraries.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+See - full example workthrough here:
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+This project was created with Visual Studio 2019, and is an ASP.NET Core 3 Web Application.
 
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+You will also need to have an account with NHS Digital API Platform
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+This sample can be run locally, as long as it can reach the NHS Digital API Platform
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* Visual Studio 2019 - ASP.NET Core 3 and Razor pages
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
@@ -82,7 +33,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* There are many good articles, but the demo was mostly put together from Microsoft documentation
+* **Billie Thompson** - README template - [PurpleBooth](https://github.com/PurpleBooth)
 
