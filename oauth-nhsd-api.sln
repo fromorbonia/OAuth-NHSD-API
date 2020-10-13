@@ -3,10 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oauth-nhsd-api", "src\oauth-nhsd-api\oauth-nhsd-api.csproj", "{296326B0-A966-4F66-8D2A-47F0ADEA2A03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "oauth-nhsd-api", "src\oauth-nhsd-api\oauth-nhsd-api.csproj", "{296326B0-A966-4F66-8D2A-47F0ADEA2A03}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6336B943-F2AE-45C2-9022-8573084361EC}"
 	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
 		README.md = README.md
 	EndProjectSection
 EndProject

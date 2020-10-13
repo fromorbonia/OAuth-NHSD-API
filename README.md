@@ -22,7 +22,7 @@ This sample can be run locally, as long as it can reach the NHS Digital API Plat
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This is just code brought together to help others get started quickly, nothing unique. Licensed under Zero-Clause BSD - see [LICENSE.md](LICENSE.md)
 
 ## Acknowledgments
 
