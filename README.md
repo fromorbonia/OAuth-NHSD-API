@@ -4,7 +4,7 @@ Some OAuth providers enable you to reuse the authentication of an OIDC provider.
 
 ## Getting Started
 
-See - full example workthrough here:
+See - full example workthrough here: [Medium - Example: Web Client & Server App Authenticating with NHS Digital Identity via OAuth](https://aubyncrawford.medium.com/example-web-client-server-app-authenticating-with-nhs-digital-oauth-1563f8c9c5ad)
 
 ### Prerequisites
 
@@ -27,5 +27,5 @@ This is just code brought together to help others get started quickly, nothing u
 ## Acknowledgments
 
 * There are many good articles, but the demo was mostly put together from Microsoft documentation
-* **Billie Thompson** - README template - [PurpleBooth](https://github.com/PurpleBooth)
+* Billie Thompson - README template - [PurpleBooth](https://github.com/PurpleBooth)
 
